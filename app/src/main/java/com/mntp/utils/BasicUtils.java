@@ -1,19 +1,13 @@
 package com.mntp.utils;
 
-import java.io.BufferedInputStream;
-import java.io.InputStream;
+import android.content.Context;
+
 import java.io.UnsupportedEncodingException;
-import java.net.URL;
-import java.net.URLConnection;
 import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-import android.content.Context;
-
-import org.apache.http.util.ByteArrayBuffer;
-import org.apache.http.util.EncodingUtils;
 
 public class BasicUtils {
 	/**
@@ -90,8 +84,7 @@ public class BasicUtils {
      * 将px值转换为sp值，保证文字大小不变 
      *  
      * @param pxValue 
-     * @param fontScale 
-     *            （DisplayMetrics类中属性scaledDensity） 
+     *            （DisplayMetrics类中属性scaledDensity）
      * @return 
      */ 
     public static int px2sp(Context context, float pxValue) {  
@@ -102,8 +95,7 @@ public class BasicUtils {
      * 将sp值转换为px值，保证文字大小不变 
      *  
      * @param spValue 
-     * @param fontScale 
-     *            （DisplayMetrics类中属性scaledDensity） 
+     *            （DisplayMetrics类中属性scaledDensity）
      * @return 
      */ 
     public static int sp2px(Context context, float spValue) {  
@@ -143,23 +135,5 @@ public class BasicUtils {
 		time = temp.format(cal.getTime());
 		return time;
 	}
-
-	public static String getHtmlString(String urlString) {
-		try {
-			URL url = new URL(urlString);
-			URLConnection ucon = url.openConnection();
-			InputStream instr = ucon.getInputStream();
-			BufferedInputStream bis = new BufferedInputStream(instr);
-			ByteArrayBuffer baf = new ByteArrayBuffer(500);
-			int current = 0;
-			while ((current = bis.read()) != -1) {
-				baf.append((byte) current);
-			}
-			return EncodingUtils.getString(baf.toByteArray(), "UTF-8");
-		} catch (Exception e) {
-			return "";
-		}
-	}
-
 
 }
