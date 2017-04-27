@@ -13,11 +13,6 @@ import com.mntp.utils.TUtils;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
-/**
- * 父类
- * 作者：kc on 2017/02/04.
- * qq：742174283.
- */
 public abstract class BaseFragment<T extends BasePresenter> extends Fragment  {
     public T mPresenter; // p
     private Unbinder unbinder;

@@ -1,7 +1,5 @@
 package com.mntp.utils;
 
-import android.util.Log;
-
 /**
  * Created by AFei on 2015/9/1.
  * 获取网址

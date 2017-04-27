@@ -3,11 +3,6 @@ package com.mntp.utils;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 
-/**
- * 泛型实例化
- * 作者：kc on 2017/02/04.
- * qq：742174283.
- */
 public class TUtils {
 
     public static <T> T getT(Object o) {
