@@ -1,12 +1,12 @@
-package com.mntp.application;
+package com.mntp;
 
 import android.app.Application;
 
-
 /**
- * Created by AFei on 2015/12/3.
+ * Created by afei on 2017/4/28 0028.
  */
-public class AFeiMNTPApplication extends Application {
+public class App extends Application{
+
     @Override
     public void onCreate() {
         super.onCreate();

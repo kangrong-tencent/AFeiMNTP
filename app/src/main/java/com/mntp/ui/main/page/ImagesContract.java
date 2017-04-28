@@ -12,6 +12,7 @@ public interface ImagesContract {
 
         /**
          * 设置图片列表
+         *
          * @param list
          */
         void setImsData(List<ImageInfo> list);
@@ -19,7 +20,7 @@ public interface ImagesContract {
 
     abstract class Presenter extends BasePresenter<View> {
 
-        int typeIMGs,pager;
+        int typeIMGs, pager = 1;
 
         /////////////////////////////  网络操作  /////////////////////////////
 
@@ -37,6 +38,7 @@ public interface ImagesContract {
 
         /**
          * 设置图片类型
+         *
          * @param typeIMGs
          */
         abstract void setTypeIMGs(int typeIMGs);

@@ -1,6 +1,5 @@
 package com.mntp.ui.main.page;
 
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.widget.Toast;
@@ -48,11 +47,13 @@ public class ImagesFragment extends BaseFragment<ImagesPresenter> implements Ima
      */
     @Override
     public void initData() {
-        imagesRv.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
+        imagesRv.setLayoutManager(new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL));
         imagesRv.addOnScrollListener(scrollListener);
         int SDh = AutoUtils.getPercentHeightSizeBigger(16);
         SpacesItemDecoration decoration = new SpacesItemDecoration(SDh);
         imagesRv.addItemDecoration(decoration);
+        mPresenter.setTypeIMGs(ImgType);
+        mPresenter.loadImgs();
     }
 
     /**
@@ -89,7 +90,6 @@ public class ImagesFragment extends BaseFragment<ImagesPresenter> implements Ima
     @Override
     public void setImsData(List<ImageInfo> list) {
         imagesAdapter = new ImagesAdapter(getActivity(), list);
-        imagesRv.setLayoutManager(new LinearLayoutManager(getActivity()));
         imagesRv.setAdapter(imagesAdapter);
         imagesAdapter.setOnItemClickListener(ItemOnClick);
     }

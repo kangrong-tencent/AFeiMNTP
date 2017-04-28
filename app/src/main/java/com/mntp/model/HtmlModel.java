@@ -23,28 +23,29 @@ public class HtmlModel {
     /**
      * 获取网页中的img标签链接
      */
-    public Observable<List<ImageInfo>> getImgUrl(final String url){
-       return Observable.create((Subscriber<? super List<ImageInfo>> sub) ->{
-                        if (!BasicUtils.isNotNull(url))
-                            return;
-                        Document html= null;
-                        try {
-                            html = Jsoup.connect(url).timeout(10000).post();
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                        Elements urls = html.select("img[src$=.jpg]");
-                        List<ImageInfo> imgUrls= new ArrayList<>();
-                        for(Element eUrl :urls){
-                            String src=eUrl.attr("src");
-                            if(BasicUtils.isNotNull(src)){
-                                ImageInfo imageInfo=new ImageInfo();
-                                imageInfo.setImgUrl(src);
-                                imgUrls.add(imageInfo);
-                            }
-                        }
-                        sub.onNext(imgUrls);
-                        sub.onCompleted();
-                }).subscribeOn(Schedulers.io());
+    public Observable<List<ImageInfo>> getImgUrl(final String url) {
+        return Observable.create((Subscriber<? super List<ImageInfo>> sub) -> {
+            if (!BasicUtils.isNotNull(url))
+                return;
+            Document html = null;
+            try {
+                html = Jsoup.connect(url).timeout(10000).post();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            if (html == null) return;
+            Elements urls = html.select("img[src$=.jpg]");
+            List<ImageInfo> imgUrls = new ArrayList<>();
+            for (Element eUrl : urls) {
+                String src = eUrl.attr("src");
+                if (BasicUtils.isNotNull(src)) {
+                    ImageInfo imageInfo = new ImageInfo();
+                    imageInfo.setImgUrl(src);
+                    imgUrls.add(imageInfo);
+                }
+            }
+            sub.onNext(imgUrls);
+            sub.onCompleted();
+        }).subscribeOn(Schedulers.io());
     }
 }

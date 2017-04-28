@@ -3,6 +3,7 @@
     package="com.example.administrator.afeimntp" >
 
     <application
+        android:name="com.mntp.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -16,6 +17,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- autolayout 配置 -->
+        <meta-data
+            android:name="design_width"
+            android:value="1080" />
+        <meta-data
+            android:name="design_height"
+            android:value="1920" />
     </application>
     <uses-permission android:name="android.permission.INTERNET"/>
 </manifest>

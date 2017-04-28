@@ -44,7 +44,7 @@ public class ImagesPresenter extends ImagesContract.Presenter {
                     if (list.size() > 0) {
                         mView.setImsData(list);
                     }
-                });
+                }, throwable -> mView.toastShow(throwable.getMessage()));
     }
 
     /**
@@ -62,7 +62,7 @@ public class ImagesPresenter extends ImagesContract.Presenter {
      */
     @Override
     void loadPager() {
-        pager = 0;
+        pager = 1;
     }
 
     /**

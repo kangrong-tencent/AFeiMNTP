@@ -18,19 +18,12 @@ public class URLTool {
     public static final int  CID_QIAOTUN=6;//小翘臀
     public static final int  CID_SIWA=7;//黑丝袜
 
-    public static int CID=0;
-    private static int FORMERLY_CID=-1;//上一次的CID
-    private static int PAGES=1;
-
-
     /**
      * 获取URl页面（默认在原来的基础页数上加 1）
      */
     public static String getUrl(int imagesType,int pages){
-        if(FORMERLY_CID!=-1&&FORMERLY_CID!=CID){
-            PAGES=1;
-        }
-        return HEAD_URL+HEAD_CID+imagesType+HEAD_PAGES+pages;
+        String url=HEAD_URL+HEAD_CID+imagesType+HEAD_PAGES+pages;
+        return url;
     }
 
 }
