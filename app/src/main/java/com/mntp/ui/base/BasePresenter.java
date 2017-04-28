@@ -1,6 +1,8 @@
 package com.mntp.ui.base;
 
 
+import com.mntp.model.HtmlModel;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +16,9 @@ import rx.Subscription;
 public abstract class BasePresenter<T> {
     protected T mView; // view层
 
-    protected List<Subscription> mRxManage =new ArrayList<>(); // rx管理器
+    protected List<Subscription> mRxManage = new ArrayList<>(); // rx管理器
+
+    protected HtmlModel htmlModel = new HtmlModel();//爬虫网络层
 
     /**
      * 设置view和model
@@ -31,15 +35,16 @@ public abstract class BasePresenter<T> {
 
     /**
      * 添加事件到控制器
+     *
      * @param subscription
      */
-    public void addRX(Subscription subscription){
+    public void addRX(Subscription subscription) {
         mRxManage.add(subscription);
     }
 
     public void onDestroy() {
         if (mRxManage != null)
-            for (Subscription subscription :mRxManage){
+            for (Subscription subscription : mRxManage) {
                 subscription.unsubscribe();
             }
     }

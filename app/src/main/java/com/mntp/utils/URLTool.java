@@ -6,8 +6,8 @@ package com.mntp.utils;
  */
 public class URLTool {
     private static final String HEAD_URL="http://www.dbmeinv.com/dbgroup/show.htm";
-    private static final String CID_HEAD="?cid=";
-    private static final String PAGES_HEAD="&pager_offset=";
+    private static final String HEAD_CID="?cid=";
+    private static final String HEAD_PAGES="&pager_offset=";
 
 
     public static final int  CID_SUOYOU=0;//所有
@@ -26,14 +26,11 @@ public class URLTool {
     /**
      * 获取URl页面（默认在原来的基础页数上加 1）
      */
-    public static String getUrl(){
+    public static String getUrl(int imagesType,int pages){
         if(FORMERLY_CID!=-1&&FORMERLY_CID!=CID){
             PAGES=1;
         }
-//        Log.e("URL",HEAD_URL+CID_HEAD+CID+PAGES_HEAD+PAGES);
-        return HEAD_URL+CID_HEAD+CID+PAGES_HEAD+PAGES;
+        return HEAD_URL+HEAD_CID+imagesType+HEAD_PAGES+pages;
     }
-    public static void pagesAdd(){
-        PAGES++;
-    }
+
 }

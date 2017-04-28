@@ -22,6 +22,7 @@ public class ImagesAdapter extends RecyclerView.Adapter<ImagesAdapter.BillViewHo
 
     private Context mContext;
     private List<ImageInfo> lists;
+    private ItemOnClickListener listener;
 
     /**
      * 构造方法
@@ -42,6 +43,13 @@ public class ImagesAdapter extends RecyclerView.Adapter<ImagesAdapter.BillViewHo
     public BillViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View inflatedView = LayoutInflater.from(mContext).inflate(R.layout.item_images, parent, false);
         return new BillViewHolder(inflatedView);
+    }
+
+    /**
+     * 点击事件
+     */
+    public void setOnItemClickListener(ItemOnClickListener listener) {
+        this.listener = listener;
     }
 
     /**
@@ -78,15 +86,30 @@ public class ImagesAdapter extends RecyclerView.Adapter<ImagesAdapter.BillViewHo
     /**
      * 自定义的ViewHolder
      */
-    public class BillViewHolder extends RecyclerView.ViewHolder {
+    public class BillViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         @BindView(R.id.item_img)
         ImageView img; // 图标
+
+        private ItemOnClickListener mlistener;
 
         public BillViewHolder(View itemView) {
             super(itemView);
             AutoUtils.auto(itemView);
             ButterKnife.bind(this, itemView);
+            this.mlistener=listener;
         }
+
+
+        @Override
+        public void onClick(View v) {
+            if (mlistener != null) {
+                mlistener.click(v, getPosition());
+            }
+        }
+    }
+
+    public interface ItemOnClickListener{
+        void click(View view,int position);
     }
 }

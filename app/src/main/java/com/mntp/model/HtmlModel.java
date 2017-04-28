@@ -1,5 +1,6 @@
 package com.mntp.model;
 
+import com.mntp.entity.ImageInfo;
 import com.mntp.utils.BasicUtils;
 
 import org.jsoup.Jsoup;
@@ -13,7 +14,6 @@ import java.util.List;
 
 import rx.Observable;
 import rx.Subscriber;
-import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
 /**
@@ -23,8 +23,8 @@ public class HtmlModel {
     /**
      * 获取网页中的img标签链接
      */
-    public Observable<List<String>> getImgUrl(final String url){
-       return Observable.create((Subscriber<? super List<String>> sub) ->{
+    public Observable<List<ImageInfo>> getImgUrl(final String url){
+       return Observable.create((Subscriber<? super List<ImageInfo>> sub) ->{
                         if (!BasicUtils.isNotNull(url))
                             return;
                         Document html= null;
@@ -34,11 +34,14 @@ public class HtmlModel {
                             e.printStackTrace();
                         }
                         Elements urls = html.select("img[src$=.jpg]");
-                        List<String> imgUrls=new ArrayList<String>();
+                        List<ImageInfo> imgUrls= new ArrayList<>();
                         for(Element eUrl :urls){
                             String src=eUrl.attr("src");
-                            if(BasicUtils.isNotNull(src))
-                                imgUrls.add(src);
+                            if(BasicUtils.isNotNull(src)){
+                                ImageInfo imageInfo=new ImageInfo();
+                                imageInfo.setImgUrl(src);
+                                imgUrls.add(imageInfo);
+                            }
                         }
                         sub.onNext(imgUrls);
                         sub.onCompleted();
