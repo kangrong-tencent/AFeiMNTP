@@ -3,6 +3,7 @@ package com.mntp.ui.base;
 import android.app.Activity;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
 
@@ -54,6 +55,11 @@ public abstract class BaseFragmentActivity<T extends BasePresenter> extends Frag
      * xml布局文件
      */
     protected abstract int getLayoutId();
+
+    @Override
+    public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
+        //super.onSaveInstanceState(outState, outPersistentState);
+    }
 
     /**
      * 初始化，代替onCreate
