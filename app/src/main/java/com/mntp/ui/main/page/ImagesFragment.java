@@ -1,5 +1,6 @@
 package com.mntp.ui.main.page;
 
+import android.annotation.SuppressLint;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.widget.Toast;
@@ -28,9 +29,11 @@ public class ImagesFragment extends BaseFragment<ImagesPresenter> implements Ima
     int ImgType; //默认全部显示
 
     public ImagesFragment() {
+        super();
     }
-
+    @SuppressLint("ValidFragment")
     public ImagesFragment(int ImgType) {
+        super();
         this.ImgType = ImgType;
     }
 
@@ -124,4 +127,10 @@ public class ImagesFragment extends BaseFragment<ImagesPresenter> implements Ima
             }
         }
     };
+
+    @Override
+    public void onDestroy() {
+        mPresenter.unsubscribe();
+        super.onDestroy();
+    }
 }
