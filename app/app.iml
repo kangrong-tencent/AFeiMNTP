@@ -22,41 +22,34 @@
       </configuration>
     </facet>
     <facet type="kotlin-language" name="Kotlin">
-      <configuration version="1">
-        <option name="compilerInfo">
-          <KotlinCompilerInfo>
-            <option name="compilerSettings">
-              <CompilerSettings />
-            </option>
-            <option name="k2jsCompilerArguments">
-              <K2JSCompilerArguments />
-            </option>
-            <option name="k2jvmCompilerArguments">
-              <K2JVMCompilerArguments />
-            </option>
-            <option name="_commonCompilerArguments">
-              <DummyImpl>
-                <option name="languageVersion" value="1.1" />
-                <option name="apiVersion" value="1.1" />
-                <option name="pluginClasspaths">
-                  <array />
-                </option>
-                <option name="coroutinesWarn" value="true" />
-                <option name="pluginOptions">
-                  <array />
-                </option>
-              </DummyImpl>
-            </option>
-          </KotlinCompilerInfo>
-        </option>
-        <option name="useProjectSettings" value="false" />
-        <option name="versionInfo">
-          <KotlinVersionInfo>
-            <option name="apiLevel" value="1.1" />
-            <option name="languageLevel" value="1.1" />
-            <option name="targetPlatformName" value="JVM 1.8" />
-          </KotlinVersionInfo>
-        </option>
+      <configuration version="2" platform="JVM 1.6" useProjectSettings="false">
+        <compilerSettings>
+          <option name="additionalArguments" value="-no-jdk" />
+        </compilerSettings>
+        <compilerArguments>
+          <option name="destination" value="C:\Data\PersonalCode\AFeiMNTP\app\build\tmp\kotlin-classes\releaseUnitTest" />
+          <option name="classpath" value="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\glide\3.6.1\86b122e640af09b0723e1fa44083c354ba6d9089\glide-3.6.1.jar;C:\Users\Administrator\.android\build-cache\d47503572dcac6aecc29fdb737ad7107b7198f31\output\jars\classes.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\io.reactivex\rxjava\1.0.13\b8668706414b5936d38c8a9e4c2be16e3c999c62\rxjava-1.0.13.jar;C:\Users\Administrator\.android\build-cache\140f6284a4b9812523223073896990de2da4ef3b\output\jars\classes.jar;C:\Users\Administrator\.android\build-cache\d59678006cb12ca049315abba68279c7165538ba\output\jars\classes.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.jakewharton\butterknife-annotations\8.4.0\ea392375cf9ff59234a82e7928a204215ccc98cd\butterknife-annotations-8.4.0.jar;C:\Users\Administrator\.android\build-cache\a08e2fe863e33fbb1f34b2fbf6f459eaf952f7a6\output\jars\classes.jar;C:\Users\Administrator\.android\build-cache\6adc905d22617684de467daf25f3eb0f9cf48344\output\jars\classes.jar;C:\Users\Administrator\.android\build-cache\0b8e318767ec20b1a2aa9ec4fcd5c5cfbe972724\output\jars\classes.jar;C:\Users\Administrator\.android\build-cache\afe725e0b691383fa2b56531c037cfcb850938d2\output\jars\classes.jar;C:\Users\Administrator\.android\build-cache\95ff4caf6e2bd4aea2d5b12fd2d97d4920b32962\output\jars\classes.jar;C:\Users\Administrator\.android\build-cache\06c4bc3bd669e21912aa75ef8eaf77bd8b175cfc\output\jars\classes.jar;C:\Users\Administrator\.android\build-cache\e4d19a16844bdd56a1d0827e71715c98b0cdb8e6\output\jars\classes.jar;C:\Users\Administrator\.android\build-cache\bd88e59b71c7f0dcd65caee131410fb0b7167fda\output\jars\classes.jar;C:\Users\Administrator\.android\build-cache\bd88e59b71c7f0dcd65caee131410fb0b7167fda\output\jars\libs\internal_impl-25.0.1.jar;C:\Users\Administrator\.android\build-cache\55dc4bc2df0524896200ddfbb22040f3453092aa\output\jars\classes.jar;C:\Users\Administrator\.android\build-cache\55dc4bc2df0524896200ddfbb22040f3453092aa\output\jars\libs\internal_impl-25.0.1.jar;C:\Users\Administrator\.android\build-cache\c7c78c99e91b8d0422207b52d5263e8341ca35f4\output\jars\classes.jar;C:\Users\Administrator\.android\build-cache\c7c78c99e91b8d0422207b52d5263e8341ca35f4\output\jars\libs\internal_impl-25.0.1.jar;C:\Users\Administrator\.android\build-cache\072931aa1952b0f381e7481274a2d8980240ed2d\output\jars\classes.jar;C:\Users\Administrator\.android\build-cache\072931aa1952b0f381e7481274a2d8980240ed2d\output\jars\libs\internal_impl-25.0.1.jar;C:\Users\Administrator\.android\build-cache\fed1551aa6cb4188794a51a0f027a3d7b550cbe4\output\jars\classes.jar;C:\Users\Administrator\.android\build-cache\fed1551aa6cb4188794a51a0f027a3d7b550cbe4\output\jars\libs\internal_impl-25.0.1.jar;C:\Application\ADT\adt-bundle-windows-x86_64-20140702\sdk\extras\android\m2repository\com\android\support\support-annotations\25.0.1\support-annotations-25.0.1.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib-jre7\1.1.2-4\e6a7403299b8f3126e3a1576c02e3f07ae5af6fa\kotlin-stdlib-jre7-1.1.2-4.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.jetbrains.anko\anko\0.10.0\751d7b04f6e49f0e0a0ea786a93d4ac97a340899\anko-0.10.0.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.jetbrains.anko\anko-coroutines\0.10.0\a20526c1cc0281e1c02d692aefeb0d4b21a5d437\anko-coroutines-0.10.0.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.jetbrains.anko\anko-sqlite\0.10.0\874e9f699618a33baf77bc2a9541448e8fcc1e3b\anko-sqlite-0.10.0.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.jetbrains.anko\anko-sdk25\0.10.0\3637dde1d95311e16683adf8e99f717fe0ce39b0\anko-sdk25-0.10.0.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.jetbrains.anko\anko-sdk25-coroutines\0.10.0\60fb3a514321be393ffdd94a262fb43c427404be\anko-sdk25-coroutines-0.10.0.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.jetbrains.anko\anko-appcompat-v7\0.10.0\6d7fa31d28cfd91f23f6377dce7b2df99035c105\anko-appcompat-v7-0.10.0.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.jetbrains.anko\anko-support-v4\0.10.0\c782d02e35b643b659cab49e66c0d59bab7fc692\anko-support-v4-0.10.0.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.jetbrains.anko\anko-appcompat-v7-coroutines\0.10.0\2f50c191d1483b1e11288b77b641ed77bab7be68\anko-appcompat-v7-coroutines-0.10.0.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlinx\kotlinx-coroutines-android\0.13\c8e175ec16d443eda1373b809305abca5898eda3\kotlinx-coroutines-android-0.13.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlinx\kotlinx-coroutines-core\0.13\8b461de23164cc3d9697ac41785cb54eae29e6eb\kotlinx-coroutines-core-0.13.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.jetbrains.anko\anko-appcompat-v7-commons\0.10.0\39d366787ed60686da440037f9166cc598f854dc\anko-appcompat-v7-commons-0.10.0.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.jetbrains.anko\anko-support-v4-commons\0.10.0\24a1355ff236618ab1d59d37cca3153cab8ee8e7\anko-support-v4-commons-0.10.0.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.jetbrains.anko\anko-commons\0.10.0\3de0694cacc8fb6f118091c7ae1ec6540047ed0d\anko-commons-0.10.0.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib\1.1.2-4\3f5f1498bdbb9611cb1413f794b3a3a5a6edef34\kotlin-stdlib-1.1.2-4.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.jetbrains\annotations\13.0\919f0dfe192fb4e063e7dacadee7f8bb9a2672a9\annotations-13.0.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.alibaba\fastjson\1.1.57.android\432b7cdf5c6aedc452406928adea891136569091\fastjson-1.1.57.android.jar;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.8.0\c4ba5371a29ac9b2ad6129b1d39ea38750043eff\gson-2.8.0.jar;C:\Data\PersonalCode\AFeiMNTP\app\libs\jsoup-1.8.3.jar;C:\Application\ADT\adt-bundle-windows-x86_64-20140702\sdk\platforms\android-25\android.jar" />
+          <option name="noStdlib" value="true" />
+          <option name="noReflect" value="true" />
+          <option name="moduleName" value="app_release" />
+          <option name="jvmTarget" value="1.6" />
+          <option name="addCompilerBuiltIns" value="true" />
+          <option name="loadBuiltInsFromDependencies" value="true" />
+          <option name="languageVersion" value="1.1" />
+          <option name="apiVersion" value="1.1" />
+          <option name="pluginClasspaths">
+            <array>
+              <option value="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-android-extensions\1.1.2-4\e93295c7a55a4f7072c61826ed5039cae29ae795\kotlin-android-extensions-1.1.2-4.jar" />
+            </array>
+          </option>
+          <option name="coroutinesWarn" value="true" />
+          <option name="pluginOptions">
+            <array>
+              <option value="plugin:org.jetbrains.kotlin.android:package=com.example.administrator.afeimntp" />
+              <option value="plugin:org.jetbrains.kotlin.android:variant=main;C:\Data\PersonalCode\AFeiMNTP\app\src\main\res" />
+            </array>
+          </option>
+        </compilerArguments>
       </configuration>
     </facet>
   </component>
@@ -116,31 +109,23 @@
       <sourceFolder url="file://$MODULE_DIR$/src/test/shaders" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/assets" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/blame" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/builds" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/classes" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/dependency-cache" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.0.1/jars" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/jars" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support/design/25.0.1/jars" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.0.1/jars" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.1/jars" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.1/jars" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.1/jars" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.1/jars" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.1/jars" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support/support-v4/25.0.1/jars" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.0.1/jars" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support/transition/25.0.1/jars" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.jakewharton/butterknife/8.4.0/jars" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.zhy/autolayout/1.4.3/jars" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/io.reactivex/rxandroid/1.0.1/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental-classes" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental-runtime-classes" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental-safeguard" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental-verifier" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/instant-run-resources" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/instant-run-support" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/jniLibs" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/manifests" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/pre-dexed" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/reload-dex" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/res" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/restart-dex" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/rs" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/shaders" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/split-apk" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/symbols" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/transforms" />
       <excludeFolder url="file://$MODULE_DIR$/build/kotlin" />

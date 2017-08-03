@@ -30,7 +30,7 @@ public class HtmlModel {
             Document html = null;
             try {
                 html = Jsoup.connect(url).timeout(10000).post();
-            } catch (IOException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
             if (html == null) return;

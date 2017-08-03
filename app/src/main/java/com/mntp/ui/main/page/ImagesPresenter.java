@@ -2,6 +2,8 @@ package com.mntp.ui.main.page;
 
 import com.mntp.utils.URLTool;
 
+import rx.Subscriber;
+import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
 
 public class ImagesPresenter extends ImagesContract.Presenter {
@@ -38,13 +40,17 @@ public class ImagesPresenter extends ImagesContract.Presenter {
      * 获取图片
      */
     private void getImgs() {
-        htmlModel.getImgUrl(URLTool.getUrl(typeIMGs, pager))
+        subscriptions.add(htmlModel.getImgUrl(URLTool.getUrl(typeIMGs, pager))
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(list -> {
                     if (list.size() > 0) {
-                        mView.setImsData(list);
+                        if (pager != 1) {
+                            mView.refreshImsData(list);
+                        } else {
+                            mView.setImsData(list);
+                        }
                     }
-                }, throwable -> mView.toastShow(throwable.getMessage()));
+                }, throwable -> mView.toastShow(throwable.getMessage())));
     }
 
     /**
@@ -71,5 +77,12 @@ public class ImagesPresenter extends ImagesContract.Presenter {
     @Override
     void increasePager() {
         pager++;
+    }
+
+    @Override
+    void unsubscribe() {
+        for(Subscription subscriber:subscriptions){
+            subscriber.unsubscribe();
+        }
     }
 }

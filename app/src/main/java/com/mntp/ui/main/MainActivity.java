@@ -22,6 +22,7 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
     TabLayout mainTab;
     @BindView(R.id.id_main_vp)
     ViewPager mainVp;
+    MainAdapter mainAdapter;
 
     /**
      * Activity实例
@@ -45,7 +46,7 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
     @Override
     protected void initData() {
         mPresenter.loadPager();
-        mainVp.setOffscreenPageLimit(10);
+        mainVp.setOffscreenPageLimit(1);
     }
 
     /**
@@ -58,7 +59,25 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
         mainTab.setTabMode(TabLayout.MODE_FIXED);
         for (String tab : tabs)
             mainTab.addTab(mainTab.newTab().setText(tab));
+        mainTab.setOnTabSelectedListener(listener);
     }
+
+    /**
+     * tablayout 点击事件
+     */
+    TabLayout.OnTabSelectedListener listener=new TabLayout.OnTabSelectedListener(){
+        @Override
+        public void onTabSelected(TabLayout.Tab tab) {
+            int position = tab.getPosition();
+            mainVp.setCurrentItem(position);
+        }
+        @Override
+        public void onTabUnselected(TabLayout.Tab tab) {
+        }
+        @Override
+        public void onTabReselected(TabLayout.Tab tab) {
+        }
+    };
 
     /**
      * 设置页面
@@ -67,8 +86,9 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
      */
     @Override
     public void setPager(List<Fragment> lists) {
-        MainAdapter mainAdapter = new MainAdapter(getSupportFragmentManager(), lists);
+        mainAdapter = new MainAdapter(getSupportFragmentManager(), lists);
         mainVp.setAdapter(mainAdapter);
+        mainVp.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(mainTab));
     }
 
     /**

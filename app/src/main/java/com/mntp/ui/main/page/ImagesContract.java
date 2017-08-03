@@ -4,7 +4,10 @@ import com.mntp.entity.ImageInfo;
 import com.mntp.ui.base.BasePresenter;
 import com.mntp.ui.base.BaseView;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import rx.Subscription;
 
 public interface ImagesContract {
 
@@ -16,11 +19,21 @@ public interface ImagesContract {
          * @param list
          */
         void setImsData(List<ImageInfo> list);
+
+        /**
+         * 刷新图片列表
+         *
+         * @param list
+         */
+        void refreshImsData(List<ImageInfo> list);
+
     }
 
     abstract class Presenter extends BasePresenter<View> {
 
         int typeIMGs, pager = 1;
+
+        List<Subscription> subscriptions=new ArrayList<>();
 
         /////////////////////////////  网络操作  /////////////////////////////
 
@@ -52,6 +65,12 @@ public interface ImagesContract {
          * 将页数加 1
          */
         abstract void increasePager();
+
+        /**
+         * 取消订阅
+         */
+        abstract void unsubscribe();
+
     }
 
 }

@@ -47,7 +47,7 @@ public class ImagesFragment extends BaseFragment<ImagesPresenter> implements Ima
      */
     @Override
     public void initData() {
-        imagesRv.setLayoutManager(new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL));
+        imagesRv.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
         imagesRv.addOnScrollListener(scrollListener);
         int SDh = AutoUtils.getPercentHeightSizeBigger(16);
         SpacesItemDecoration decoration = new SpacesItemDecoration(SDh);
@@ -92,6 +92,12 @@ public class ImagesFragment extends BaseFragment<ImagesPresenter> implements Ima
         imagesAdapter = new ImagesAdapter(getActivity(), list);
         imagesRv.setAdapter(imagesAdapter);
         imagesAdapter.setOnItemClickListener(ItemOnClick);
+    }
+
+    @Override
+    public void refreshImsData(List<ImageInfo> list) {
+        imagesAdapter.addLists(list);
+        imagesAdapter.notifyItemChanged(imagesAdapter.getItemCount());
     }
 
     /**

@@ -11,7 +11,9 @@ public class RecyclerViewUtils {
 
     public static boolean isSlideToBottom(RecyclerView recyclerView) {
         if (recyclerView == null) return false;
-        if (recyclerView.computeVerticalScrollExtent() + recyclerView.computeVerticalScrollOffset() >= recyclerView.computeVerticalScrollRange())
+        if (recyclerView.computeVerticalScrollExtent()
+                + recyclerView.computeVerticalScrollOffset()
+                >= recyclerView.computeVerticalScrollRange())
             return true;
         return false;
     }

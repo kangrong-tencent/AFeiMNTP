@@ -9,10 +9,16 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.ResourceEncoder;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.load.engine.Resource;
+import com.bumptech.glide.load.resource.gifbitmap.GifBitmapWrapper;
 import com.example.administrator.afeimntp.R;
 import com.mntp.entity.ImageInfo;
+import com.zhy.autolayout.AutoLinearLayout;
 import com.zhy.autolayout.utils.AutoUtils;
 
+import java.io.OutputStream;
 import java.util.List;
 
 import butterknife.BindView;
@@ -23,13 +29,15 @@ public class ImagesAdapter extends RecyclerView.Adapter<ImagesAdapter.BillViewHo
     private Context mContext;
     private List<ImageInfo> lists;
     private ItemOnClickListener listener;
-
+    int wide,hight;
     /**
      * 构造方法
      */
     public ImagesAdapter(Context mContext, List<ImageInfo> lists) {
         this.mContext = mContext;
         this.lists = lists;
+        wide = AutoUtils.getPercentWidthSizeBigger(500);
+        hight = AutoUtils.getPercentHeightSizeBigger(800);
     }
 
     public void addLists(List<ImageInfo> lists) {
@@ -61,6 +69,9 @@ public class ImagesAdapter extends RecyclerView.Adapter<ImagesAdapter.BillViewHo
         Glide.with(mContext)
                 .load(imageInfo.getImgUrl())
                 .placeholder(Color.parseColor("#87CEFA"))
+                .error(R.color.color_4a95ea)
+                .override(wide, hight)
+                .diskCacheStrategy(DiskCacheStrategy.RESULT)
                 .into(holder.img);
     }
 
