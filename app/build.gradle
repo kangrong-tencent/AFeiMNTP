@@ -43,11 +43,6 @@ dependencies {
     compile 'com.jakewharton:butterknife:8.4.0'
     apt 'com.jakewharton:butterknife-compiler:8.4.0'
     compile 'com.android.support:design:25.0.1'
-    compile "org.jetbrains.anko:anko:0.10.0"
-    //fastjson
-    compile 'com.alibaba:fastjson:1.1.57.android'
-    // gson
-    compile 'com.google.code.gson:gson:2.8.0'
 }
 repositories {
     mavenCentral()
