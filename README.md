@@ -1,6 +1,8 @@
-# AFeiMNTP \<br> \<br>
-## 主要使用 \<br>
+# AFeiMNTP
+## 主要使用
 * RxJava
 * Jsoup
 * Autolayout
-* Glide \<br>
+* Glide
+## 主要运行效果
+
