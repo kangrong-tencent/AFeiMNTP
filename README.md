@@ -6,3 +6,4 @@
 * Glide
 ## 主要运行效果
 
+![](https://github.com/AFeiDaRen/AFeiMNTP/blob/master/img/gif_20170804_163634.gif)
