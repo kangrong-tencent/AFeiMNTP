@@ -1,6 +1,7 @@
 package com.mntp.ui.main.page;
 
 import android.annotation.SuppressLint;
+import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.widget.Toast;
@@ -8,6 +9,8 @@ import android.widget.Toast;
 import com.example.administrator.afeimntp.R;
 import com.mntp.entity.ImageInfo;
 import com.mntp.ui.base.BaseFragment;
+import com.mntp.ui.main.page.browse.BrowseActivity;
+import com.mntp.utils.IntentUtils;
 import com.mntp.utils.RecyclerViewUtils;
 import com.mntp.widget.custom.rv.SpacesItemDecoration;
 import com.zhy.autolayout.utils.AutoUtils;
@@ -107,7 +110,8 @@ public class ImagesFragment extends BaseFragment<ImagesPresenter> implements Ima
      * 图片点击事件
      */
     ImagesAdapter.ItemOnClickListener ItemOnClick = (view, position) -> {
-
+        ImageInfo imageInfo=imagesAdapter.getItem(position);
+        IntentUtils.intoIntent(getActivity(), BrowseActivity.class, imageInfo.getInfoURL());
     };
 
     /**

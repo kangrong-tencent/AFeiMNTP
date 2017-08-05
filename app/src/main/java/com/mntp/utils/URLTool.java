@@ -5,6 +5,7 @@ package com.mntp.utils;
  * 获取网址
  */
 public class URLTool {
+
     private static final String HEAD_URL="http://www.dbmeinv.com/dbgroup/show.htm";
     private static final String HEAD_CID="?cid=";
     private static final String HEAD_PAGES="&pager_offset=";

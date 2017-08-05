@@ -14,6 +14,9 @@ import java.util.List;
 
 import butterknife.BindView;
 
+/**
+ * 首页
+ */
 public class MainActivity extends BaseActivity<MainPresenter> implements MainContract.View {
 
     @BindView(R.id.id_main_v)

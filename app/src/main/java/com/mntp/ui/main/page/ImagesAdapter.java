@@ -26,19 +26,19 @@ import butterknife.ButterKnife;
 
 public class ImagesAdapter extends RecyclerView.Adapter<ImagesAdapter.BillViewHolder> {
 
-    private Context mContext;
-    private List<ImageInfo> lists;
-    private ItemOnClickListener listener;
-    int wide,hight;
-    /**
-     * 构造方法
-     */
+        private Context mContext;
+        private List<ImageInfo> lists;
+        private ItemOnClickListener listener;
+        int wide,hight;
+        /**
+         * 构造方法
+         */
     public ImagesAdapter(Context mContext, List<ImageInfo> lists) {
-        this.mContext = mContext;
-        this.lists = lists;
-        wide = AutoUtils.getPercentWidthSizeBigger(500);
-        hight = AutoUtils.getPercentHeightSizeBigger(800);
-    }
+            this.mContext = mContext;
+            this.lists = lists;
+            wide = AutoUtils.getPercentWidthSizeBigger(500);
+            hight = AutoUtils.getPercentHeightSizeBigger(800);
+        }
 
     public void addLists(List<ImageInfo> lists) {
         this.lists.addAll(lists);
