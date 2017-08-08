@@ -32,6 +32,12 @@
 -dontwarn com.alibaba.fastjson.**
 -keep class com.alibaba.fastjson.**{*; }
 
+#glide
+-keep class com.bumptech.glide.** {*;}
+
+#jsoup
+-keep class org.jsoup.nodes.** {*;}
+
 # T-Mvp
 -keep public class * extends com.mntp.ui.base.BasePresenter
 

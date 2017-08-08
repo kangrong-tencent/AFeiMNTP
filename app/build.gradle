@@ -29,6 +29,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
 
         }
+        debug{
+            // 混淆
+            minifyEnabled true
+            // 压缩apk
+            zipAlignEnabled true
+            // 去除无用文件
+            shrinkResources true
+            // 混淆资源文件
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
     }
 }
 
