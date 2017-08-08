@@ -19,13 +19,15 @@ import butterknife.BindView;
 import static com.mntp.utils.IntentUtils.INTENT_KEY;
 
 /**
- * 首页
+ * 浏览页
  */
 public class BrowseActivity extends BaseActivity<BrowsePresenter>
         implements BrowseContract.View {
 
     @BindView(R.id.id_return_img)
     ImageView returnImg;
+    @BindView(R.id.id_save_img)
+    ImageView saveImg;
     @BindView(R.id.id_browse_vp)
     ViewPager browseVp;
     BrowseAdapter browseAdapter;
@@ -51,6 +53,7 @@ public class BrowseActivity extends BaseActivity<BrowsePresenter>
      */
     @Override
     protected void initData() {
+
         String infoImg = getIntent().getStringExtra(INTENT_KEY);
         if (TextUtils.isEmpty(infoImg)) {
             finish();
@@ -58,7 +61,16 @@ public class BrowseActivity extends BaseActivity<BrowsePresenter>
         }
         mPresenter.setUrl(infoImg);
         mPresenter.loadPager();
+
+        initClick();
+    }
+
+    /**
+     * 初始化点击事件
+     */
+    private void initClick() {
         returnImg.setOnClickListener(v -> finish());
+        saveImg.setOnClickListener(v->browseAdapter.getItem(browseVp.getCurrentItem()).saveImg());
     }
 
 
@@ -68,7 +80,7 @@ public class BrowseActivity extends BaseActivity<BrowsePresenter>
      * @param lists
      */
     @Override
-    public void setPager(List<Fragment> lists) {
+    public void setPager(List<BrowseFragment> lists) {
         browseAdapter = new BrowseAdapter(getSupportFragmentManager(), lists);
         browseVp.setAdapter(browseAdapter);
     }

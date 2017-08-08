@@ -109,6 +109,7 @@ public class ImagesAdapter extends RecyclerView.Adapter<ImagesAdapter.BillViewHo
             AutoUtils.auto(itemView);
             ButterKnife.bind(this, itemView);
             this.mlistener=listener;
+            img.setOnClickListener(this);
         }
 
 

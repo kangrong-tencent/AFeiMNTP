@@ -16,13 +16,13 @@ public interface BrowseContract {
          * 设置页面
          * @param lists
          */
-        void setPager(List<Fragment> lists);
+        void setPager(List<BrowseFragment> lists);
     }
 
     abstract class Presenter extends BasePresenter<View> {
 
         String url=null;
-        List<Fragment> fragments = new ArrayList<>();
+        List<BrowseFragment> fragments = new ArrayList<>();
 
         /////////////////////////////  网络操作  /////////////////////////////
 

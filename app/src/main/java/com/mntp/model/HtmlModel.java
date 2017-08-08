@@ -54,4 +54,35 @@ public class HtmlModel {
                     return imgUrls;
                 }).filter(imgUrls -> imgUrls != null && imgUrls.size() != 0);
     }
+
+    /**
+     * 获取浏览页图片信息
+     */
+    public Observable<List<ImageInfo>> getInfoImgUrl(final String url) {
+        return Observable.just(url)
+                .subscribeOn(Schedulers.io())
+                .map(urlStr -> {
+                    if (!BasicUtils.isNotNull(urlStr))
+                        return null;
+                    Document html = null;
+                    try {
+                        html = Jsoup.connect(urlStr).timeout(5000).post();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    if (html == null) return null;
+                    Elements datas = html.select("div.topic-figure.cc");
+                    Elements urls = datas.select("img[src$=.jpg]");
+                    List<ImageInfo> imgUrls = new ArrayList<>();
+                    for (int i = 0, j = urls.size(); i < j; i++) {
+                        String src = urls.get(i).attr("src");
+                        if (BasicUtils.isNotNull(src)) {
+                            ImageInfo imageInfo = new ImageInfo();
+                            imageInfo.setImgUrl(src);
+                            imgUrls.add(imageInfo);
+                        }
+                    }
+                    return imgUrls;
+                }).filter(imgUrls -> imgUrls != null && imgUrls.size() != 0);
+    }
 }

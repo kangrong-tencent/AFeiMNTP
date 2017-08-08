@@ -12,14 +12,14 @@ import java.util.List;
  */
 public class BrowseAdapter extends FragmentStatePagerAdapter {
 
-    private List<Fragment> fragmentList;
+    private List<BrowseFragment> fragmentList;
 
-    public BrowseAdapter(FragmentManager fm, List<Fragment> fragmentList) {
+    public BrowseAdapter(FragmentManager fm, List<BrowseFragment> fragmentList) {
         super(fm);
         this.fragmentList=fragmentList;
     }
     @Override
-    public Fragment getItem(int position) {
+    public BrowseFragment getItem(int position) {
         return fragmentList.get(position);
     }
 

@@ -22,13 +22,13 @@ public class MainPresenter extends MainContract.Presenter {
         strings.add("全部");
         fragments.add(new ImagesFragment(URLTool.CID_SUOYOU));
 
-        strings.add("大胸妹");
+        strings.add("大胸脯");
         fragments.add(new ImagesFragment(URLTool.CID_DAXIONG));
 
-        strings.add("美腿控");
+        strings.add("美腿儿");
         fragments.add(new ImagesFragment(URLTool.CID_MEITUI));
 
-        strings.add("小清新");
+        strings.add("清新风");
         fragments.add(new ImagesFragment(URLTool.CID_QINGXIN));
 
         strings.add("大杂烩");

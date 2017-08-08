@@ -2,19 +2,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/id_return_img"
-        android:layout_width="125px"
-        android:layout_height="125px"
-        android:layout_margin="50px"
-        android:background="@drawable/ic_launcher"
-        android:padding="25px"
-        android:scaleType="fitXY"
-        android:src="@drawable/ic_arrow" />
 
     <android.support.v4.view.ViewPager
         android:id="@+id/id_browse_vp"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
+    <ImageView
+        android:id="@+id/id_return_img"
+        android:layout_width="125px"
+        android:layout_height="125px"
+        android:layout_marginTop="50px"
+        android:layout_marginLeft="50px"
+        android:background="@drawable/ic_launcher"
+        android:padding="25px"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_arrow" />
+
+    <ImageView
+        android:id="@+id/id_save_img"
+        android:layout_width="125px"
+        android:layout_height="125px"
+        android:layout_marginTop="50px"
+        android:layout_marginRight="50px"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/ic_launcher"
+        android:padding="25px"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_save" />
 </com.zhy.autolayout.AutoRelativeLayout>
